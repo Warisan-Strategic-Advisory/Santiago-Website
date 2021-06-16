@@ -8,7 +8,8 @@ import KlangDistrict from './KlangDistrict';
 const useStyles = makeStyles((theme?: any ) => ({
     holder: {
         [theme.breakpoints.up('sm')] : {
-            padding: theme.spacing(10),
+            paddingTop: theme.spacing(13),
+            paddingRight: theme.spacing(10),
             paddingLeft: theme.spacing(20)
         },
         [theme.breakpoints.down('sm')] : {
@@ -35,7 +36,7 @@ const Landing: React.FC = () => {
                     This year, we’ve experienced the disastrous consequences of disconnected leadership that fails to meet the needs of everyday people and responds to our systemic crises by leaving everyone to fend for themselves. We’ve tried their way and it doesn’t work. Our community has proven that we are stronger together. We are stronger when we look out for each other. We are better off when we reject racism, cynicism and hate. Our future is brighter when we commit to healthcare as a human right, unprecedented climate action and the creation of millions of good dignified jobs. A better world is possible.  We just need to choose it. 
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={3} className={classes.shift}>
+                <Grid item xs={12} md={4} lg={3} className={classes.shift}>
                     <KlangDistrict />
                 </Grid>
             </Grid>
