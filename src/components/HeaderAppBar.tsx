@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from "react-router-dom";
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -100,6 +101,7 @@ const useStyles = makeStyles((theme?: any ) => ({
 export const HeaderAppBar: React.FC<Props> = () => {
     const classes = useStyles();
     const [draweropen, setDraweropen] = useState(false);
+    const history = useHistory();
     
     const toggleDrawer = (open: boolean) => (
         event: React.KeyboardEvent | React.MouseEvent,
@@ -119,14 +121,19 @@ export const HeaderAppBar: React.FC<Props> = () => {
         <div className={classes.grow}>
             <SwipeableDrawer anchor="left" open={draweropen} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)} >
                 <div className={classes.drawer}>
-                    <img src={Logo} className={classes.menuicon} alt="logo" />
+                    <IconButton onClick={()=> history.push("/")}>
+                        <img src={Logo} className={classes.menuicon} alt="logo"/>
+                    </IconButton>
                     <Divider></Divider>
                     <List>
-                        <ListItem button key="home">
+                        <ListItem button key="home" onClick={()=> history.push("/")}>
                             <ListItemText primary="HOME" />
                         </ListItem>
                         <ListItem button key="about">
                             <ListItemText primary="ABOUT" />
+                        </ListItem>
+                        <ListItem button key="issues" onClick={()=> history.push("/issues")}>
+                            <ListItemText primary="ISSUES" />
                         </ListItem>
                         <ListItem button key="home">
                             <ListItemText primary="INITIATIVES" />
@@ -148,12 +155,14 @@ export const HeaderAppBar: React.FC<Props> = () => {
                     >
                         <MenuIcon className={classes.menuButtonElement} />
                     </IconButton>
-                    <img src={Logo} className={classes.title} alt="logo" />
+                    <IconButton onClick={()=> history.push("/")}>
+                        <img src={Logo} className={classes.title} alt="logo" />
+                    </IconButton>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <Button className={classes.textbuttons}>HOME</Button>
+                        <Button className={classes.textbuttons} onClick={()=> history.push("/")}>HOME</Button>
                         <Button className={classes.textbuttons}>ABOUT</Button>
-                        <Button className={classes.textbuttons}>ISSUES</Button>
+                        <Button className={classes.textbuttons} onClick={()=> history.push("/issues")}>ISSUES</Button>
                         <Button className={classes.textbuttons}>INITIATIVES</Button>
                         <Button className={classes.textbuttons}>CONTACT</Button>
                     </div>
