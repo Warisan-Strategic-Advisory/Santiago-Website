@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme?: any ) => ({
         backgroundColor : "#FFFFFF",
         color: theme.palette.primary.main,
         padding: theme.spacing(2),
-        fontSize: 18
+        fontSize: 18,
+        boxShadow: 'none'
     }
 }))
 
