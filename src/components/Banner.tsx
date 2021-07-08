@@ -10,8 +10,8 @@ type Props = {
 const useStyles = makeStyles((theme?: any ) => ({
     bannerstyle: {
         backgroundColor: theme.palette.primary.main,
-        paddingTop: theme.spacing(6),
-        paddingBottom: theme.spacing(6),
+        paddingTop: theme.spacing(8),
+        paddingBottom: theme.spacing(8),
         textAlign: 'center'
     },
     text: {

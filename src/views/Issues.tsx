@@ -12,11 +12,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import DepartureBoardIcon from '@material-ui/icons/DepartureBoard';
 
 const useStyles = makeStyles((theme?: any ) => ({
-    bannerdiv: {
-        [theme.breakpoints.up('md')] : {
-            paddingTop: "3em"
-        },
-    },
     issuesholder: {
         paddingTop: theme.spacing(3),
         [theme.breakpoints.up('md')] : {
@@ -51,8 +46,9 @@ const Issues: React.FC =() => {
 
     return (
         <div style={{paddingBottom: "5em"}}>
-            <HeaderAppBar facebooklink="http://facebook.com" twitterlink="http://twitter.com" youtubelink="http://youtube.com" />
-            <div className={classes.bannerdiv} >               
+            <HeaderAppBar facebooklink="http://facebook.com" twitterlink="http://twitter.com" youtubelink="http://youtube.com" appbartype="fixed" />
+            <HeaderAppBar facebooklink="http://facebook.com" twitterlink="http://twitter.com" youtubelink="http://youtube.com" appbartype="static" />
+            <div>               
                 <Banner title="Charles Santiago's Platform" />
             </div>
             <div className={classes.issuesholder}>
